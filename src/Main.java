@@ -21,13 +21,11 @@ public class Main {
             System.out.println(employees[i].toString());
 
 
-
         System.out.println("Сумма все зарплат за месяц " + amountOfSalaries());
         System.out.println("Сотрудник с максимальной зарплатой " + getMaxSalary());
         System.out.println("Сотрудник с минимальной зарплатой " + getMinSalary());
         System.out.println("Cреднее значение зарплат за месяц " + averageSalary());
         System.out.println(displayListFullName());
-
 
     }
 
@@ -78,12 +76,13 @@ public class Main {
         return sum / employees.length;
     }
 
-    public static String displayListFullName () {
+    public static String displayListFullName() {
         String listEmployees = " ";
         for (Employee employee : employees) {
 
             System.out.println(employee.getFullName());
         }
         return listEmployees;
-    }}
+    }
+}
 
