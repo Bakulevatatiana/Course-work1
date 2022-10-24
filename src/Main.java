@@ -1,12 +1,9 @@
-import java.sql.Array;
-import java.sql.SQLOutput;
-
 public class Main {
     private static final Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
 
-        employees[0] = new Employee("Иванов Иван Иванович", 1, 34000);
+        employees[0] = new Employee("Иванов Иван Иванович", 1, 10000);
         employees[1] = new Employee("Петров Петр Петрович", 2, 25444);
         employees[2] = new Employee("Волкова Анастасия Юрьевна", 3, 56222);
         employees[3] = new Employee("Кузьмина Любовь Юрьевна", 4, 32111);
@@ -26,6 +23,7 @@ public class Main {
         System.out.println("Сотрудник с минимальной зарплатой " + getMinSalary());
         System.out.println("Cреднее значение зарплат за месяц " + averageSalary());
         System.out.println(displayListFullName());
+
 
     }
 
@@ -65,15 +63,18 @@ public class Main {
         return targetEmployee;
     }
 
+
     public static double averageSalary() {
         double sum = 0;
+        int sum2 = 0;
 
-        for (Employee employee : employees) {
-            if (employee != null) {
-                sum += employee.getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                sum2++;
+                sum += employees[i].getSalary();
             }
         }
-        return sum / employees.length;
+        return sum/sum2;
     }
 
     public static String displayListFullName() {
@@ -81,8 +82,10 @@ public class Main {
         for (Employee employee : employees) {
 
             System.out.println(employee.getFullName());
+
         }
         return listEmployees;
     }
+
 }
 
